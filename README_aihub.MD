@@ -1,4 +1,4 @@
-# docker run
+# docker build
 
     cd docker
     docker build -f minimal.Dockerfile -t openpcdet:cuda11 .
