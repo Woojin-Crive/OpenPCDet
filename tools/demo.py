@@ -67,7 +67,7 @@ def parse_config():
     parser.add_argument('--data_path', type=str, default='demo_data',
                         help='specify the point cloud data file or directory')
     parser.add_argument('--ckpt', type=str, default=None, help='specify the pretrained model')
-    parser.add_argument('--ext', type=str, default='.bin', help='specify the extension of your point cloud data file')
+    parser.add_argument('--ext', type=str, default='.npy', help='specify the extension of your point cloud data file')
 
     args = parser.parse_args()
 
@@ -110,3 +110,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

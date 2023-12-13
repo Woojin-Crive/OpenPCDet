@@ -77,12 +77,8 @@ class CustomDataset(DatasetTemplate):
         return point_features
 
     def set_split(self, split):
-        if split == 'train':
-            training = True
-        else:
-            training = False
-        self.__init__(
-            dataset_cfg=self.dataset_cfg, class_names=self.class_names, training=training,
+        super().__init__(
+            dataset_cfg=self.dataset_cfg, class_names=self.class_names, training=self.training,
             root_path=self.root_path, logger=self.logger
         )
         self.sample_id_list = list()
@@ -294,10 +290,12 @@ if __name__ == '__main__':
         from easydict import EasyDict
 
         dataset_cfg = EasyDict(yaml.safe_load(open(sys.argv[2])))
+        print(dataset_cfg)
         ROOT_DIR = (Path(__file__).resolve().parent / '../../../').resolve()
+        print("ROOT_DIR",ROOT_DIR)
         create_custom_infos(
             dataset_cfg=dataset_cfg,
             class_names=["car", "truck", "pedestrian", "bicycle"], # TODO
-            data_path= dataset_cfg.DATA_PATH,
-            save_path= dataset_cfg.DATA_PATH,
+            data_path=ROOT_DIR / 'data' / 'robust',
+            save_path=ROOT_DIR / 'data' / 'robust',
         )
