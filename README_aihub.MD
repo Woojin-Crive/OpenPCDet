@@ -16,8 +16,23 @@
 
 
 # Aihub data conversion
+1. Download [dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=629)
+2. extract at /data/robust/
+3. folder structure should be 
+    ```
+    OpenPCDet
+    ├── data
+    │   ├── robust
+    │   │   │── 1.주간
+    ├── pcdet
+    ├── tools
+    ```
 
-    python3 data/robust/convert.py
+# Aihub data conversion
+if python script finds "..../lidar/roof/" directory, copy json and bin files.
+
+    python3 convert.py
+
 
 
 # Dataset pre-prosessing
