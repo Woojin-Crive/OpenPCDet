@@ -15,7 +15,7 @@
     pip install kornia==0.6.5
 
 
-# Aihub data conversion
+# Aihub data download
 1. Download [dataset](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&topMenu=100&aihubDataSe=data&dataSetSn=629)
 2. extract at /data/robust/
 3. folder structure should be 
